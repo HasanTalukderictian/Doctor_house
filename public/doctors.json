@@ -1,0 +1,74 @@
+{
+    "doctors": [
+      {
+        "doctorimg": "doctor1.jpg",
+        "diseaseimg": "disease1.jpg",
+        "specialist": "Cardiologist",
+        "price": "$150",
+        "visiting_time": "Monday, Wednesday, Friday - 9:00 AM to 5:00 PM"
+      },
+      {
+        "doctorimg": "doctor2.jpg",
+        "diseaseimg": "disease2.jpg",
+        "specialist": "Dermatologist",
+        "price": "$120",
+        "visiting_time": "Tuesday, Thursday - 10:00 AM to 6:00 PM"
+      },
+      {
+        "doctorimg": "doctor3.jpg",
+        "diseaseimg": "disease3.jpg",
+        "specialist": "Ophthalmologist",
+        "price": "$130",
+        "visiting_time": "Monday, Wednesday, Friday - 8:30 AM to 4:30 PM"
+      },
+      {
+        "doctorimg": "doctor4.jpg",
+        "diseaseimg": "disease4.jpg",
+        "specialist": "Pediatrician",
+        "price": "$110",
+        "visiting_time": "Tuesday, Thursday - 9:30 AM to 5:30 PM"
+      },
+      {
+        "doctorimg": "doctor5.jpg",
+        "diseaseimg": "disease5.jpg",
+        "specialist": "Gynecologist",
+        "price": "$140",
+        "visiting_time": "Monday, Wednesday, Friday - 10:00 AM to 6:00 PM"
+      },
+      {
+        "doctorimg": "doctor6.jpg",
+        "diseaseimg": "disease6.jpg",
+        "specialist": "Orthopedic Surgeon",
+        "price": "$160",
+        "visiting_time": "Tuesday, Thursday - 8:00 AM to 4:00 PM"
+      },
+      {
+        "doctorimg": "doctor7.jpg",
+        "diseaseimg": "disease7.jpg",
+        "specialist": "Neurologist",
+        "price": "$170",
+        "visiting_time": "Monday, Wednesday, Friday - 8:00 AM to 4:00 PM"
+      },
+      {
+        "doctorimg": "doctor8.jpg",
+        "diseaseimg": "disease8.jpg",
+        "specialist": "Urologist",
+        "price": "$125",
+        "visiting_time": "Tuesday, Thursday - 9:00 AM to 5:00 PM"
+      },
+      {
+        "doctorimg": "doctor9.jpg",
+        "diseaseimg": "disease9.jpg",
+        "specialist": "ENT Specialist",
+        "price": "$115",
+        "visiting_time": "Monday, Wednesday, Friday - 10:30 AM to 6:30 PM"
+      },
+      {
+        "doctorimg": "doctor10.jpg",
+        "diseaseimg": "disease10.jpg",
+        "specialist": "Psychiatrist",
+        "price": "$150",
+        "visiting_time": "Tuesday, Thursday - 8:30 AM to 4:30 PM"
+      }
+    ]
+  }
