@@ -8,13 +8,16 @@ import {
   RouterProvider,
 } from "react-router-dom";
 import { router } from './componments/Routes/Router';
+import AuthProvider from './Provider/AuthProvider';
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-  <React.StrictMode>
+ <AuthProvider>
+   <React.StrictMode>
     <RouterProvider router={router} />
   </React.StrictMode>
+ </AuthProvider>
 );
 
 // If you want to start measuring performance in your app, pass a function

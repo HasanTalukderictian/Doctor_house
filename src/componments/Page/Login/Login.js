@@ -1,10 +1,38 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import loginImg from '../../../assests/registration (2).png';
 import { Link } from 'react-router-dom';
+import { AuthContext } from '../../../Provider/AuthProvider';
+import Swal from 'sweetalert2';
 const Login = () => {
-    
+      
+    const {signIn} = useContext(AuthContext);
+
     const handleLogin =event => {
-        event.preventDefault()
+       
+        
+
+        event.preventDefault();
+        const form = event.target;
+        const email = form.email.value;
+        const password = form.password.value;
+        const user  = {email, password}
+        console.log(user);
+        signIn(email, password)
+        .then(result  => {
+            const user  =  result.user;
+            console.log(user)
+            form.reset();
+            Swal.fire({
+                position: "top-end",
+                icon: "success",
+                title: "You are Login Successfully",
+                showConfirmButton: false,
+                timer: 1500
+              });
+        })
+        .then(error => {
+            console.log(error);
+        })
     }
 
 

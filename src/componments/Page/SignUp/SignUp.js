@@ -1,11 +1,40 @@
-import React from 'react';
-import loginImg from '../../../assests/registration (1).png';
+import React, { useContext } from 'react';
+
 import { Link } from 'react-router-dom';
+import { AuthContext } from '../../../Provider/AuthProvider';
+import Swal from 'sweetalert2';
 
 const SignUp = () => {
+    
+    const {createUser} = useContext(AuthContext);
 
     const handleSignUp =event => {
-        event.preventDefault()
+        event.preventDefault();
+        const form = event.target;
+        const name = form.name.value;
+        const email = form.email.value;
+        const photo = form.photo.value;
+        const password = form.password.value;
+        const user  = { name, email, photo, password}
+        console.log(user);
+
+        createUser(email, password)
+        .then(result => {
+               const user = result.user;
+               console.log(user);
+               form.reset();
+               Swal.fire({
+                position: "top-end",
+                icon: "success",
+                title: "User has been Created Successfully",
+                showConfirmButton: false,
+                timer: 2000
+              });
+        })
+        .then(error => {
+            console.log(error)
+        })
+       
     }
 
     return (
@@ -47,7 +76,7 @@ const SignUp = () => {
                     </div>
                     <div className="form-control mt-6">
                     
-                    <input type="submit"  className="btn text-xl text-white bg-[#ff3811]" value="Login" />
+                    <input type="submit"  className="btn text-xl text-white bg-[#ff3811]" value="Sign Up" />
                     </div>
                     <Link to='/login' className='text-center my-3'>All Ready Have an Account  <span className='text-orange-400'>Login</span></Link>
                 </form>
