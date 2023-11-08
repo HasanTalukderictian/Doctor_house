@@ -1,6 +1,7 @@
 import React, { useContext, useEffect, useState } from 'react';
 import { AuthContext } from '../../../Provider/AuthProvider';
 import BookingRow from './BookingRow';
+import Swal from 'sweetalert2';
 
 const Bookings = () => {
 
@@ -19,6 +20,42 @@ const Bookings = () => {
             })
     }, [url])
 
+    const handleDelete =id => {
+        Swal.fire({
+            title: "Are you sure?",
+            text: "You are going to delete!",
+            icon: "warning",
+            showCancelButton: true,
+            confirmButtonColor: "#3085d6",
+            cancelButtonColor: "#d33",
+            confirmButtonText: "Yes, delete it!"
+          }).then((result) => {
+            if (result.isConfirmed) {
+     
+              fetch(`http://localhost:4000/bookings/${id}`, {
+                method:'DELETE'
+              })
+              .then(res => res.json())
+              .then(data => {
+                console.log(data);
+                if(data.deletedCount > 0){
+                    Swal.fire({
+                        title: "Deleted!",
+                        text: "Your file has been deleted.",
+                        icon: "success"
+                      });
+
+                      const remaining = bookings.filter(booking => booking._id !==id)
+                      setBookings(remaining);
+                }
+              })
+                            
+
+             
+            }
+          });
+    }
+
     return (
         <div>
             <h2>{bookings.length}</h2>
@@ -29,10 +66,10 @@ const Bookings = () => {
                         <tr>
                             <th>
                                 <label>
-                                    <input type="checkbox" className="checkbox" />
+                                    <input placeholder='Action'  />
                                 </label>
                             </th>
-                            <th>Image</th>
+                            <th>Doctor Name</th>
                             <th>Service</th>
                             <th>Date</th>
                             <th>Price</th>
@@ -44,6 +81,7 @@ const Bookings = () => {
                             bookings.map(booking => <BookingRow
                                 key={booking._id}
                                 booking={booking}
+                                handleDelete={handleDelete}
                            
                             ></BookingRow>)
                         }
